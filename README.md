@@ -1,4 +1,4 @@
-# bls12_381 [![Crates.io](https://img.shields.io/crates/v/bls12_381.svg)](https://crates.io/crates/bls12_381) #
+# zkMIPS_bls12_381
 
 This crate provides an implementation of the BLS12-381 pairing-friendly elliptic curve construction.
 
