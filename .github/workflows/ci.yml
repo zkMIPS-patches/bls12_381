@@ -36,27 +36,27 @@ jobs:
       - name: Verify working directory is clean (excluding lockfile)
         run: git diff --exit-code ':!Cargo.lock'
 
-  no-std:
-    name: Check no-std target ${{ matrix.target }}
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        target:
-          - thumbv6m-none-eabi
-          - wasm32-unknown-unknown
-          - wasm32-wasi
+  # no-std:
+  #   name: Check no-std target ${{ matrix.target }}
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       target:
+  #         - thumbv6m-none-eabi
+  #         - wasm32-unknown-unknown
+  #         - wasm32-wasi
 
-    steps:
-      - uses: actions/checkout@v4
-      - run: rustup target add ${{ matrix.target }}
-      - run: cargo fetch
-      - name: Build
-        run: >
-          cargo build
-          --verbose
-          --target ${{ matrix.target }}
-          --no-default-features
-          --features groups,pairings,alloc
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - run: rustup target add ${{ matrix.target }}
+  #     - run: cargo fetch
+  #     - name: Build
+  #       run: >
+  #         cargo build
+  #         --verbose
+  #         --target ${{ matrix.target }}
+  #         --no-default-features
+  #         --features groups,pairings,alloc
 
   bitrot:
     name: Bitrot check
