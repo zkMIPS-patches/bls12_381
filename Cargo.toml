@@ -28,14 +28,14 @@ zeroize = { version = "1.4", optional = true, default-features = false }
 hex = { version = "0.4", optional = true, default-features = false, features = ["alloc"] }
 
 [target.'cfg(target_os = "zkvm")'.dependencies]
-zkm-lib = { git = "https://github.com/felicityin/zkMIPS.git", branch = "upgrade-deps", default-features = false }
+zkm-lib = { git = "https://github.com/zkMIPS/zkMIPS.git", default-features = false }
 
 [dev-dependencies]
 csv = ">= 1.0, < 1.2" # csv 1.2 has MSRV 1.60
 criterion = "0.3"
 hex-literal = "0.3"
 rand_xorshift = "0.3"
-sha2 = "0.10"
+sha2 = "0.10.8"
 sha3 = "0.10"
 rand = "0.8"
 
